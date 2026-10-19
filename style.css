@@ -1,3 +1,17 @@
+:root{
+    --bg: #f7f8ff;
+    --accent: #445daf;
+    --text: #333333;
+    --card: #ffffff;
+}
+
+:root[data-theme="dark"]{
+    --bg: #0e0e12;
+    --accent: #6f298f;
+    --text: #e8e8ee;
+    --card: #17171d;
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -11,7 +25,8 @@ html{
 
 body{
     font-family: Arial, sans-serif;
-    background-color: #f7f8ff;
+    background-color: var(--bg);
+    color: var(--text);
 }
 
 nav a{
@@ -50,7 +65,7 @@ nav a:hover span{
 header{
     position: sticky;
     top: 0;
-    background-color: #445daf;
+    background-color: var(--accent);
     color: white;
     padding: 25px 20px;
     box-shadow: 0px 2px 4px rgba(0,0,0,0.1);
@@ -94,13 +109,13 @@ section{
 
 .hero-text h1{
     font-size: 48px;
-    color: #445daf;
+    color: var(--accent);
     margin-bottom: 20px;
 }
 
 .hero-text p{
     font-size: 18px;
-    color: #333;
+    color: var(--text);
     line-height: 1.5;
     margin-bottom: 15px;
 }
@@ -121,7 +136,7 @@ section{
 }
 
 .project-card, .skill-card{
-    background-color: white;
+    background-color: var(--card);
     padding: 25px;
     border-radius: 12px;
     box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
@@ -133,19 +148,14 @@ section{
     transition: 0.3s;
 }
 
-#projects h2, #skills h2{
-    margin-bottom: 30px;
-    color: #445daf;
-}
-
 .project-card p{
     margin-bottom: 15px;
     line-height: 1.5;
-    color: #333;
+    color: var(--text);
 }
 
 .project-card h3, .skill-card h3{
-    color: #445daf;
+    color: var(--accent);
     margin-bottom: 15px;
 }
 
@@ -165,5 +175,39 @@ section{
 .skill-card li{
     margin-bottom: 8px;
     line-height: 1.5;
-    color: #333;
+    color: var(--text);
+}
+
+.contact-links{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.contact-links p{
+    color: var(--text);
+    margin-bottom: 15px;
+}
+
+.contact-links a{
+    background-color: var(--card);
+    color: var(--accent);
+    text-decoration: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.3s;
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+}
+
+.contact-links a:hover{
+    background-color: var(--accent);
+    color: white;
+}
+
+h2{
+    color: var(--accent);
+    margin-bottom: 30px;
+    font-size: 36px;
 }
