@@ -229,7 +229,7 @@ h2{
     .skills-grid {
     grid-template-columns: 1fr;
     }
-}
+
 
 nav {
     display: flex;
@@ -291,4 +291,36 @@ h2 {
     padding: 4px 8px;
     font-size: 12px;
 }
---- Problème à résoudre ---
+}
+
+footer {
+    color: var(--text);
+    text-align: center;
+    font-size: 14px;
+    padding: 20px;
+    opacity: 0.7;
+}
+
+.reveal{
+    opacity: 0;
+    translate: 0 30px;
+    transition: opacity 0.6s, translate 0.6s;
+}
+
+.reveal.visible{
+    opacity: 1;
+    translate: 0 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .reveal {
+        transition: none;
+        opacity: 1;
+        translate: 0 0;
+    }
+}
+
+.menu a.active{
+    border-bottom: 2px solid white;
+    padding-bottom: 2px;
+}

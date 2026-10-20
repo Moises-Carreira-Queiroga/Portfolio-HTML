@@ -25,3 +25,39 @@ bouton.addEventListener("click", function () {
     }
     majIcone();
 });
+
+const elements = document.querySelectorAll("h2, .projects-grid, .skills-grid, .contact-links, #contact p");
+
+const observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+    if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
+    }
+    });
+}, { threshold: 0.15 });
+
+elements.forEach(function (el) {
+    el.classList.add("reveal");
+    observer.observe(el);
+});
+
+const sections = document.querySelectorAll("section");
+const liens = document.querySelectorAll(".menu a");
+
+const observateurMenu = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+    if (entry.isIntersecting) {
+        liens.forEach(function (lien) {
+        lien.classList.remove("active");
+        if (lien.getAttribute("href") === "#" + entry.target.id) {
+            lien.classList.add("active");
+        }
+        });
+    }
+    });
+}, { rootMargin: "-40% 0px -55% 0px" });
+
+sections.forEach(function (section) {
+    observateurMenu.observe(section);
+});
